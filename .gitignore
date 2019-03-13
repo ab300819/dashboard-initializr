@@ -115,3 +115,10 @@ typings/
 .next
 
 dist/
+
+.idea/HelloWeb.iml
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/php.xml

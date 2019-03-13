@@ -10,7 +10,7 @@ const config = {
     mode: "production",
     entry: path.join(__dirname, 'src/index.js'),
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle.[hash:8].js',
         path: path.join(__dirname, 'dist')
     },
     module: {
@@ -50,9 +50,16 @@ if (dev) {
         host:'0.0.0.0',
         overlay:{
             errors:true,
-        }
+        },
+        hot:true
     };
    config.mode='development';
+   config.plugins.push(
+       new webpack.HotModuleReplacementPlugin(),
+       new webpack.NoEmitOnErrorsPlugin()
+   );
+}else{
+
 }
 
 module.exports=config;
