@@ -30,6 +30,10 @@ const config = {
                         loader: 'file-loader'
                     }
                 ]
+            },
+            {
+                test:/\.(ttf|woff)$/,
+                loader: 'file-loader'
             }
         ]
     },
@@ -45,6 +49,7 @@ const config = {
 };
 
 if (dev) {
+    config.devtool = '#cheap-module-eval-source-map';
     config.devServer={
         port:8000,
         host:'0.0.0.0',
