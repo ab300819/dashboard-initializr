@@ -1,10 +1,10 @@
-const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const HTMLPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
-const ExtractPlugin = require('extract-text-webpack-plugin')
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HTMLPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const ExtractPlugin = require('extract-text-webpack-plugin');
 
-const dev = process.env.NODE_ENV === 'development'
+const dev = process.env.NODE_ENV === 'development';
 
 const config = {
   target: 'web',
@@ -34,6 +34,9 @@ const config = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.vue', '.js']
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -43,15 +46,15 @@ const config = {
     new HTMLPlugin(),
     new VueLoaderPlugin()
   ]
-}
+};
 
 if (dev) {
   config.module.rules.push({
     test: /\.css$/,
     use: ['style-loader', 'css-loader']
-  })
+  });
 
-  config.devtool = '#cheap-module-eval-source-map'
+  config.devtool = '#cheap-module-eval-source-map';
   config.devServer = {
     port: 8000,
     host: '0.0.0.0',
@@ -59,17 +62,17 @@ if (dev) {
       errors: true
     },
     hot: true
-  }
-  config.mode = 'development'
+  };
+  config.mode = 'development';
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  )
+  );
 } else {
   config.entry = {
     app: path.join(__dirname, 'src/index.js'),
     vendor: ['vue']
-  }
+  };
 
   config.module.rules.push({
     test: /\.css$/,
@@ -77,11 +80,11 @@ if (dev) {
       fallback: 'style-loader',
       use: ['css-loader']
     })
-  })
+  });
   config.plugins.push(
     new ExtractPlugin('main.[chunkhash:8].css'),
     new webpack.optimize.SplitChunksPlugin()
-  )
+  );
 }
 
-module.exports = config
+module.exports = config;
