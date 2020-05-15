@@ -1,17 +1,11 @@
 <template>
-    <main_view></main_view>
+  <demo></demo>
 </template>
 <script>
-    import main_view from './main_view.vue';
-    // import axios from 'axios'
-
-    export default {
-        components: {
-            main_view
-        }
-    };
+import demo from './demo';
+export default {
+  components: {
+    demo
+  }
+};
 </script>
-
-<style scoped>
-
-</style>
