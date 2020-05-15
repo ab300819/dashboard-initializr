@@ -20,12 +20,12 @@
 </template>
 
 <script>
-import chat_window from "./chat_window.vue";
-import chat_input from "./chat_input.vue";
-import chat_list from "./chat_list.vue";
+import chat_window from './chat_window.vue';
+import chat_input from './chat_input.vue';
+import chat_list from './chat_list.vue';
 
 export default {
-  name: "main_view",
+  name: 'main_view',
   components: {
     chat_window,
     chat_input,

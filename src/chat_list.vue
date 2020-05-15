@@ -19,9 +19,9 @@
 </template>
 
 <script>
-    export default {
-        name: "chat_list"
-    }
+export default {
+  name: 'chat_list'
+};
 </script>
 
 <style>

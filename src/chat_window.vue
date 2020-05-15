@@ -57,9 +57,9 @@
 </template>
 
 <script>
-    export default {
-        name: "chat_window"
-    }
+export default {
+    name: 'chat_window'
+};
 </script>
 
 <style >

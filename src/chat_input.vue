@@ -6,11 +6,7 @@
 </template>
 
 <script>
-    export default {
-        name: "chat_input"
-    }
+export default {
+  name: 'chat_input'
+};
 </script>
-
-<style>
-
-</style>
