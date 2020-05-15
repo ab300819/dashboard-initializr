@@ -67,15 +67,15 @@ if (dev) {
     );
 } else {
 
-    config.entry={
-        app:path.join(__dirname, 'src/index.js'),
-        vendor:['vue']
+    config.entry = {
+        app: path.join(__dirname, 'src/index.js'),
+        vendor: ['vue']
     };
 
     config.module.rules.push({
         test: /\.css$/,
-        use:ExtractPlugin.extract({
-            fallback:'style-loader',
+        use: ExtractPlugin.extract({
+            fallback: 'style-loader',
             use: ['css-loader']
         })
     });
