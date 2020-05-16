@@ -1,14 +1,15 @@
 import Vue from 'vue';
-import antDesign from 'ant-design-vue';
+import router from './router';
+import store from './store';
+import './registerServiceWorker';
+import element from './element';
 import app from './app.vue';
 
 Vue.config.productionTip = false;
-
-Vue.use(antDesign);
-
-const root = document.createElement('div');
-document.body.appendChild(root);
+Vue.use(element);
 
 new Vue({
-  render: (h) => h(app)
-}).$mount(root);
+  router,
+  store,
+  render: h => h(app)
+}).$mount('#app');

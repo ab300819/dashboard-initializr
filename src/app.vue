@@ -2,7 +2,7 @@
   <demo></demo>
 </template>
 <script>
-import demo from './demo';
+import demo from './hello';
 export default {
   components: {
     demo
