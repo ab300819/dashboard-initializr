@@ -4,14 +4,14 @@
       <el-header>Chat Online</el-header>
       <el-container>
         <el-aside>
-          <chat_list></chat_list>
+          <chat-list></chat-list>
         </el-aside>
         <el-container>
           <el-main>
-            <chat_window></chat_window>
+            <chat-window></chat-window>
           </el-main>
           <el-footer>
-            <chat_input></chat_input>
+            <chat-input></chat-input>
           </el-footer>
         </el-container>
       </el-container>
@@ -20,16 +20,16 @@
 </template>
 
 <script>
-import chat_window from './chat_window.vue';
-import chat_input from './chat_input.vue';
-import chat_list from './chat_list.vue';
+import chatWindow from './chatWindow.vue';
+import chatInput from './chatInput.vue';
+import chatList from './chatList.vue';
 
 export default {
   name: 'main_view',
   components: {
-    chat_window,
-    chat_input,
-    chat_list
+    chatWindow,
+    chatInput,
+    chatList
   }
 };
 </script>

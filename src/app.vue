@@ -2,7 +2,7 @@
   <demo></demo>
 </template>
 <script>
-import demo from './hello';
+import demo from './views/hello';
 export default {
   components: {
     demo
